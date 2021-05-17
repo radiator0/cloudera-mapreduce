@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f364667-695c-4491-b42c-c008f2e1ecab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StubDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StubMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StubReducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Reducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StubTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stage1Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stage1Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Mapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +72,8 @@
       <updated>1621268513848</updated>
       <workItem from="1621268522863" duration="9717000" />
       <workItem from="1621283921177" duration="1628000" />
-      <workItem from="1621292540678" duration="48000" />
+      <workItem from="1621292540678" duration="648000" />
+      <workItem from="1621295835815" duration="126000" />
     </task>
     <servers />
   </component>
@@ -118,10 +116,10 @@
     </state>
     <state x="-1592" y="0" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621272988868" />
     <state x="-1592" y="0" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1621268730129" />
-    <state x="-1329" y="302" key="com.intellij.ide.util.TipDialog" timestamp="1621292556558">
+    <state x="-1329" y="302" key="com.intellij.ide.util.TipDialog" timestamp="1621295846900">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1329" y="302" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/-3840.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1621292556558" />
+    <state x="-1329" y="302" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/-3840.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1621295846900" />
     <state x="-1329" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621283960319" />
   </component>
 </project>

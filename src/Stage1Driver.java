@@ -1,3 +1,5 @@
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -8,9 +10,10 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Stage1Driver {
+    private static final Log logger = LogFactory.getLog(Stage1Mapper.class);
 
     public static void main(String[] args) throws Exception {
-
+        logger.info("Start...");
         /*
          * Validate that two arguments were passed from the command line.
          */
