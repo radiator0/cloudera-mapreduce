@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f364667-695c-4491-b42c-c008f2e1ecab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/StubDriver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/StubMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/StubReducer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/StubTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StubMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StubMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StubReducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StubReducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StubTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StubTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StubDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StubMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Mapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StubReducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Reducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StubTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +47,8 @@
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StubDriver" />
+    <configuration name="Stage1Driver" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Stage1Driver" />
       <module name="training" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -75,12 +73,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1621268513848</updated>
-      <workItem from="1621268522863" duration="9091000" />
+      <workItem from="1621268522863" duration="9717000" />
+      <workItem from="1621283921177" duration="1628000" />
+      <workItem from="1621292540678" duration="48000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="-1506" y="167" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621272931867">
@@ -95,6 +105,10 @@
       <screen x="-3840" y="0" width="1920" height="1040" />
     </state>
     <state x="-3062" y="401" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1621268742713" />
+    <state x="-1828" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1621284005383">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1828" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621284005383" />
     <state x="624" y="200" key="FileChooserDialogImpl" timestamp="1621268599559">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -104,5 +118,10 @@
     </state>
     <state x="-1592" y="0" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621272988868" />
     <state x="-1592" y="0" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1621268730129" />
+    <state x="-1329" y="302" key="com.intellij.ide.util.TipDialog" timestamp="1621292556558">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1329" y="302" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/-3840.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1621292556558" />
+    <state x="-1329" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621283960319" />
   </component>
 </project>

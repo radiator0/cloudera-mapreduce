@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
-public class StubDriver {
+public class Stage1Driver {
 
     public static void main(String[] args) throws Exception {
 
@@ -29,7 +29,7 @@ public class StubDriver {
          * Hadoop will transfer this jar file to nodes in your cluster running
          * mapper and reducer tasks.
          */
-        job.setJarByClass(StubDriver.class);
+        job.setJarByClass(Stage1Driver.class);
 
         /*
          * Specify an easily-decipherable name for the job.
@@ -37,8 +37,8 @@ public class StubDriver {
          */
         job.setJobName("Stub Driver");
 
-        job.setMapperClass(StubMapper.class);
-        job.setReducerClass(StubReducer.class);
+        job.setMapperClass(Stage1Mapper.class);
+        job.setReducerClass(Stage1Reducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
         job.setInputFormatClass(TextInputFormat.class);

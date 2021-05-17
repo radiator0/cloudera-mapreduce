@@ -1,21 +1,23 @@
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
-public class StubMapper extends Mapper<LongWritable, Text, Text, Text> {
+public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
+    private Logger logger = Logger.getLogger(Stage1Mapper.class);
 
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-
         String line = value.toString();
         String[] splitted = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
         if(splitted.length == 145) {
             MapRajeevw(key, value, context, splitted);
         } else if (splitted.length == 46) {
             MapTheman(key, value, context, splitted);
+        } else {
+            logger.info("Invalid row length: " + splitted.length);
         }
     }
 

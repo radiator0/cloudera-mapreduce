@@ -1,4 +1,3 @@
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mrunit.mapreduce.MapDriver;
@@ -9,7 +8,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.fail;
 
-public class StubTest {
+public class Stage1Test {
 
     /*
      * Declare harnesses that let you test a mapper, a reducer, and
@@ -28,14 +27,14 @@ public class StubTest {
         /*
          * Set up the mapper test harness.
          */
-        StubMapper mapper = new StubMapper();
+        Stage1Mapper mapper = new Stage1Mapper();
         mapDriver = new MapDriver<>();
         mapDriver.setMapper(mapper);
 
         /*
          * Set up the reducer test harness.
          */
-        StubReducer reducer = new StubReducer();
+        Stage1Reducer reducer = new Stage1Reducer();
         reduceDriver = new ReduceDriver<>();
         reduceDriver.setReducer(reducer);
 
