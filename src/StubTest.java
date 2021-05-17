@@ -15,9 +15,9 @@ public class StubTest {
      * Declare harnesses that let you test a mapper, a reducer, and
      * a mapper and a reducer working together.
      */
-    MapDriver<LongWritable, Text, Text, IntWritable> mapDriver;
-    ReduceDriver<Text, IntWritable, Text, IntWritable> reduceDriver;
-    MapReduceDriver<LongWritable, Text, Text, IntWritable, Text, IntWritable> mapReduceDriver;
+    MapDriver<LongWritable, Text, Text, Text> mapDriver;
+    ReduceDriver<Text, Text, Text, Text> reduceDriver;
+    MapReduceDriver<LongWritable, Text, Text, Text, Text, Text> mapReduceDriver;
 
     /*
      * Set up the test. This method will be called before every test.
@@ -29,20 +29,20 @@ public class StubTest {
          * Set up the mapper test harness.
          */
         StubMapper mapper = new StubMapper();
-        mapDriver = new MapDriver<LongWritable, Text, Text, IntWritable>();
+        mapDriver = new MapDriver<>();
         mapDriver.setMapper(mapper);
 
         /*
          * Set up the reducer test harness.
          */
         StubReducer reducer = new StubReducer();
-        reduceDriver = new ReduceDriver<Text, IntWritable, Text, IntWritable>();
+        reduceDriver = new ReduceDriver<>();
         reduceDriver.setReducer(reducer);
 
         /*
          * Set up the mapper/reducer test harness.
          */
-        mapReduceDriver = new MapReduceDriver<LongWritable, Text, Text, IntWritable, Text, IntWritable>();
+        mapReduceDriver = new MapReduceDriver<>();
         mapReduceDriver.setMapper(mapper);
         mapReduceDriver.setReducer(reducer);
     }

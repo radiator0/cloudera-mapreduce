@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3f364667-695c-4491-b42c-c008f2e1ecab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/StubDriver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/StubMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/StubReducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/StubTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StubMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StubMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StubReducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StubReducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StubTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StubTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1sffM5K2YoscX2D6gUjrNbY4BCu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/hadoop/client" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StubDriver" />
+      <module name="training" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/Desktop/STUDBAZA/Semestr 1/PFiW/Programy13" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/STUDBAZA/Semestr 1/Sułtan/rozwiązane przeze mnie/Programy/Greeter" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f364667-695c-4491-b42c-c008f2e1ecab" name="Default Changelist" comment="" />
+      <created>1621268513848</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621268513848</updated>
+      <workItem from="1621268522863" duration="9091000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1506" y="167" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621272931867">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1506" y="167" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621272931867" />
+    <state x="-1293" y="261" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1621272909055">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1293" y="261" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621272909055" />
+    <state x="-3062" y="401" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1621268742713">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-3062" y="401" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1621268742713" />
+    <state x="624" y="200" key="FileChooserDialogImpl" timestamp="1621268599559">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="200" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1621268599559" />
+    <state x="-1592" y="0" key="SettingsEditor" timestamp="1621272988868">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1592" y="0" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621272988868" />
+    <state x="-1592" y="0" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1621268730129" />
+  </component>
+</project>

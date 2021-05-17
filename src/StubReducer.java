@@ -1,23 +1,14 @@
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-public class StubReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
-
+public class StubReducer extends Reducer<Text, Text, Text, Text> {
     @Override
-    public void reduce(Text key, Iterable<IntWritable> values, Context context)
+    public void reduce(Text key, Iterable<Text> values, Context context)
             throws IOException, InterruptedException {
 
-        int sum = 0;
-        for (IntWritable x : values) {
-            sum += x.get();
-        }
-        context.write(key, new IntWritable(sum));
-        /*
-         * TODO implement
-         */
-
+        String sum = Util.Join(values);
+        context.write(key, new Text(sum));
     }
 }
