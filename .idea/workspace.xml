@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3f364667-695c-4491-b42c-c008f2e1ecab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/hadoop.log.2021-05-17" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/hadoop/client/avro-1.5.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/mockito-all-1.10.19.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hadoop.log" beforeDir="false" afterPath="$PROJECT_DIR$/hadoop.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/hadoop/client/avro.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/hadoop/client/slf4j-log4j12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/hadoop/client/zookeeper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stage1Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Mapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stage1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Test.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1sffM5K2YoscX2D6gUjrNbY4BCu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/hadoop/client" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
+  </component>
+  <component name="RunManager" selected="JUnit.Stage1Test">
+    <configuration name="Stage1Driver" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.7.0_80" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Stage1Driver" />
+      <module name="training" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Stage1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="training" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Stage1Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Stage1Test.testMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="training" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Stage1Test" />
+      <option name="METHOD_NAME" value="testMapper" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Stage1Test.testMapperForR" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="training" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Stage1Test" />
+      <option name="METHOD_NAME" value="testMapperForR" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Stage1Test.testMapperForT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="training" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Stage1Test" />
+      <option name="METHOD_NAME" value="testMapperForT" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Stage1Driver" />
+      <item itemvalue="JUnit.Stage1Test.testMapper" />
+      <item itemvalue="JUnit.Stage1Test" />
+      <item itemvalue="JUnit.Stage1Test.testMapperForT" />
+      <item itemvalue="JUnit.Stage1Test.testMapperForR" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Stage1Test" />
+        <item itemvalue="JUnit.Stage1Test.testMapperForT" />
+        <item itemvalue="JUnit.Stage1Test.testMapperForR" />
+        <item itemvalue="JUnit.Stage1Test.testMapper" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/Desktop/STUDBAZA/Semestr 1/PFiW/Programy13" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/STUDBAZA/Semestr 1/Sułtan/rozwiązane przeze mnie/Programy/Greeter" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f364667-695c-4491-b42c-c008f2e1ecab" name="Default Changelist" comment="" />
+      <created>1621268513848</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621268513848</updated>
+      <workItem from="1621268522863" duration="9717000" />
+      <workItem from="1621283921177" duration="1628000" />
+      <workItem from="1621292540678" duration="648000" />
+      <workItem from="1621295835815" duration="1435000" />
+      <workItem from="1621327072130" duration="12275000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1506" y="167" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621349765696">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1506" y="167" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621272931867" />
+    <state x="-1506" y="167" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621349765696" />
+    <state x="-1828" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1621352545786">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1828" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621352545786" />
+    <state x="-1293" y="261" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1621272909055">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1293" y="261" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621272909055" />
+    <state x="-3062" y="401" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1621268742713">
+      <screen x="-3840" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-3062" y="401" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-3840.0.1920.1040" timestamp="1621268742713" />
+    <state x="589" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1621336373383">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="589" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621336373383" />
+    <state x="-1828" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1621284005383">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1828" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621284005383" />
+    <state x="-1697" y="172" key="FileChooserDialogImpl" timestamp="1621349703856">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="200" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1621268599559" />
+    <state x="-1697" y="172" key="FileChooserDialogImpl/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621349703856" />
+    <state width="1921" height="277" key="GridCell.Tab.0.bottom" timestamp="1621353416548">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621353416548" />
+    <state width="1921" height="277" key="GridCell.Tab.0.center" timestamp="1621353416547">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="277" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621353416547" />
+    <state width="1921" height="277" key="GridCell.Tab.0.left" timestamp="1621353416547">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="277" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621353416547" />
+    <state width="1921" height="277" key="GridCell.Tab.0.right" timestamp="1621353416547">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="277" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621353416547" />
+    <state width="1921" height="344" key="GridCell.Tab.1.bottom" timestamp="1621352657509">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621352657509" />
+    <state width="1921" height="344" key="GridCell.Tab.1.center" timestamp="1621352657509">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="344" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621352657509" />
+    <state width="1921" height="344" key="GridCell.Tab.1.left" timestamp="1621352657509">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="344" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621352657509" />
+    <state width="1921" height="344" key="GridCell.Tab.1.right" timestamp="1621352657509">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="344" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621352657509" />
+    <state x="-1592" y="0" key="SettingsEditor" timestamp="1621349906240">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1592" y="0" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621272988868" />
+    <state x="-1592" y="0" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1621268730129" />
+    <state x="-1592" y="0" key="SettingsEditor/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621349906240" />
+    <state x="-1329" y="302" key="com.intellij.ide.util.TipDialog" timestamp="1621327071893">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1329" y="302" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1040/-3840.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1621295846900" />
+    <state x="-1329" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621327071893" />
+    <state x="594" y="183" width="731" height="674" key="find.popup" timestamp="1621333543523">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="594" y="183" width="731" height="674" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1621333543523" />
+  </component>
+</project>

@@ -1,5 +1,4 @@
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -7,15 +6,15 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
-public class StubDriver {
+public class Stage1Driver {
 
     public static void main(String[] args) throws Exception {
-
+        System.err.println("Start...");
         /*
          * Validate that two arguments were passed from the command line.
          */
-        if (args.length != 2) {
-            System.out.printf("Usage: StubDriver <input dir> <output dir>\n");
+        if (args.length != 3) {
+            System.out.printf("Usage: StubDriver <input dir> <input dir> <output dir>\n");
             System.exit(-1);
         }
 
@@ -29,27 +28,23 @@ public class StubDriver {
          * Hadoop will transfer this jar file to nodes in your cluster running
          * mapper and reducer tasks.
          */
-        job.setJarByClass(StubDriver.class);
+        job.setJarByClass(Stage1Driver.class);
 
         /*
          * Specify an easily-decipherable name for the job.
          * This job name will appear in reports and logs.
          */
-        job.setJobName("Stub Driver");
+        job.setJobName("Stage1 Driver");
 
-        job.setMapperClass(StubMapper.class);
-        job.setReducerClass(StubReducer.class);
+        job.setMapperClass(Stage1Mapper.class);
+        job.setReducerClass(Stage1Reducer.class);
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
+        job.setOutputValueClass(Text.class);
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
 
-        FileInputFormat.setInputPaths(job, new Path(args[0]));
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
-
-        /*
-         * TODO implement
-         */
+        FileInputFormat.setInputPaths(job, new Path(args[0]), new Path(args[1]));
+        FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
         /*
          * Start the MapReduce job and wait for it to finish.
