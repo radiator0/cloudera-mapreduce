@@ -57,14 +57,14 @@ public class Stage2Test {
     @Test
     public void testMapper() throws IOException {
         LongWritable key = new LongWritable(0);
-        Text value = new Text("FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,5 of 11,15 of 32,1 of 2,2 of 2,0 of 0,0 of 0");
+        Text value = new Text("FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,KO/TKO,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,5 of 11,15 of 32,1 of 2,2 of 2,0 of 0,0 of 0");
         mapDriver.setInput(key, value);
 
         List<Pair<Text, Text>> result = mapDriver.run();
 
         assertEquals(1, result.size());
         String expectedK = "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE";
-        String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,11,5,32,15,2,1,2,2,0,0,0,0";
+        String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,KO/TKO,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,11,5,32,15,2,1,2,2,0,0,0,0";
         assertEquals(expectedK, result.get(0).getFirst().toString());
         assertEquals(expectedV, result.get(0).getSecond().toString());
     }

@@ -1,4 +1,3 @@
-import org.apache.commons.collections.ArrayStack;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -13,7 +12,10 @@ public class Stage2Mapper extends Mapper<LongWritable, Text, Text, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] splitted = Util.split(value);
-        System.err.println(splitted);
+        if(splitted.length != 22) {
+            System.err.println("Invalid row length: " + splitted.length);
+            System.err.println(splitted);
+        }
 
         String winner = splitted[0].equals(splitted[4]) ? splitted[0] : splitted[1];
         String loser = winner.equals(splitted[0]) ? splitted[1] : splitted[0];
@@ -43,7 +45,7 @@ public class Stage2Mapper extends Mapper<LongWritable, Text, Text, Text> {
 
 
         String newKey = winner + " vs " + loser + " ref " + referee;
-        ArrayList<String> newValueArrayList = new ArrayList<String>(Arrays.asList(splitted));
+        ArrayList<String> newValueArrayList = new ArrayList<>(Arrays.asList(splitted));
         List<String> cutList = newValueArrayList.subList(0, 16);
 
         cutList.add(head_attempts_a);
@@ -64,5 +66,4 @@ public class Stage2Mapper extends Mapper<LongWritable, Text, Text, Text> {
         String newValue = Util.join(cutList.toArray());
         context.write(new Text(newKey), new Text(newValue));
     }
-
 }

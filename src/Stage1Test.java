@@ -95,7 +95,7 @@ public class Stage1Test {
     public void testReducer() throws IOException {
         final Text key = new Text( "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE");
         final Text value1 = new Text("2_5 of 11,15 of 32,1 of 2,2 of 2,0 of 0,0 of 0");
-        final Text value2 = new Text("1_FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0");
+        final Text value2 = new Text("1_FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,Decision - Unanimous,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0");
         reduceDriver.setInput(key, Arrays.asList(value1, value2));
 
         List<Pair<Text, Text>> result = reduceDriver.run();
@@ -103,7 +103,7 @@ public class Stage1Test {
 
         assertEquals(1, result.size());
         String expectedK = "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE";
-        String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0," +
+        String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,Decision - Unanimous,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0," +
                 "5 of 11,15 of 32,1 of 2,2 of 2,0 of 0,0 of 0";
         assertEquals(expectedK, result.get(0).getFirst().toString());
         assertEquals(expectedV, result.get(0).getSecond().toString());
