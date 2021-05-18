@@ -69,6 +69,21 @@ public class Stage2Test {
         assertEquals(expectedV, result.get(0).getSecond().toString());
     }
 
+    @Test
+    public void testMapperWithNulls() throws IOException {
+        LongWritable key = new LongWritable(0);
+        Text value = new Text("FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,KO/TKO,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,,,,,,");
+        mapDriver.setInput(key, value);
+
+        List<Pair<Text, Text>> result = mapDriver.run();
+
+        assertEquals(1, result.size());
+        String expectedK = "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE";
+        String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,KO/TKO,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,,,,,,,,,,,,";
+        assertEquals(expectedK, result.get(0).getFirst().toString());
+        assertEquals(expectedV, result.get(0).getSecond().toString());
+    }
+
 
     /*
      * Test the reducer.

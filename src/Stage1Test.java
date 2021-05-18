@@ -83,7 +83,7 @@ public class Stage1Test {
 
         assertEquals(1, result.size());
         String expectedK = "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE";
-        String expectedV = "2_5 of 11,15 of 32,1 of 2,2 of 2,0 of 0,0 of 0";
+        String expectedV = "2_KO/TKO,5 of 11,15 of 32,1 of 2,2 of 2,0 of 0,0 of 0";
         assertEquals(expectedK, result.get(0).getFirst().toString());
         assertEquals(expectedV, result.get(0).getSecond().toString());
     }

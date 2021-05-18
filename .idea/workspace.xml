@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f364667-695c-4491-b42c-c008f2e1ecab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stage1Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stage1Reducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Reducer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Stage1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stage2Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage2Mapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Stage2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stage2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,21 +44,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
-  <component name="RunManager" selected="JUnit.Stage2Test.testMapper">
+  <component name="RunManager" selected="JUnit.Stage1Test.testMapperForR">
     <configuration name="Stage1Driver" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk1.7.0_80" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Stage1Driver" />
       <module name="training" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Stage1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="training" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Stage1Test" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -106,21 +94,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Stage2Test.testMapperWithNulls" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="training" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Stage2Test" />
+      <option name="METHOD_NAME" value="testMapperWithNulls" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Stage1Driver" />
-      <item itemvalue="JUnit.Stage1Test" />
       <item itemvalue="JUnit.Stage1Test.testMapperForT" />
       <item itemvalue="JUnit.Stage1Test.testMapperForR" />
       <item itemvalue="JUnit.Stage1Test.testReducer" />
       <item itemvalue="JUnit.Stage2Test.testMapper" />
+      <item itemvalue="JUnit.Stage2Test.testMapperWithNulls" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Stage1Test.testMapperForR" />
+        <item itemvalue="JUnit.Stage1Test.testMapperForT" />
+        <item itemvalue="JUnit.Stage2Test.testMapperWithNulls" />
         <item itemvalue="JUnit.Stage2Test.testMapper" />
         <item itemvalue="JUnit.Stage1Test.testReducer" />
-        <item itemvalue="JUnit.Stage1Test.testMapperForT" />
-        <item itemvalue="JUnit.Stage1Test.testMapperForR" />
-        <item itemvalue="JUnit.Stage1Test" />
       </list>
     </recent_temporary>
   </component>
@@ -147,7 +145,7 @@
       <workItem from="1621292540678" duration="648000" />
       <workItem from="1621295835815" duration="1435000" />
       <workItem from="1621327072130" duration="12275000" />
-      <workItem from="1621353588342" duration="9291000" />
+      <workItem from="1621353588342" duration="11213000" />
     </task>
     <servers />
   </component>
@@ -170,10 +168,10 @@
     </state>
     <state x="-1506" y="167" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@-1920.0.1920.1040" timestamp="1621272931867" />
     <state x="-1506" y="167" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621349765696" />
-    <state x="-1828" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1621357069248">
+    <state x="-1828" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1621375043985">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1828" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621357069248" />
+    <state x="-1828" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621375043985" />
     <state x="-1293" y="261" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1621272909055">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -199,38 +197,38 @@
     </state>
     <state x="624" y="200" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040/-3840.0.1920.1040@0.0.1920.1040" timestamp="1621268599559" />
     <state x="-1697" y="172" key="FileChooserDialogImpl/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621349703856" />
-    <state width="1921" height="277" key="GridCell.Tab.0.bottom" timestamp="1621374089363">
+    <state width="1921" height="277" key="GridCell.Tab.0.bottom" timestamp="1621376264903">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621374089363" />
-    <state width="1921" height="277" key="GridCell.Tab.0.center" timestamp="1621374089363">
+    <state width="1921" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621376264903" />
+    <state width="1921" height="277" key="GridCell.Tab.0.center" timestamp="1621376264903">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="277" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621374089363" />
-    <state width="1921" height="277" key="GridCell.Tab.0.left" timestamp="1621374089363">
+    <state width="1921" height="277" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621376264903" />
+    <state width="1921" height="277" key="GridCell.Tab.0.left" timestamp="1621376264903">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="277" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621374089363" />
-    <state width="1921" height="277" key="GridCell.Tab.0.right" timestamp="1621374089363">
+    <state width="1921" height="277" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621376264903" />
+    <state width="1921" height="277" key="GridCell.Tab.0.right" timestamp="1621376264903">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="277" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621374089363" />
-    <state width="1921" height="344" key="GridCell.Tab.1.bottom" timestamp="1621364276584">
+    <state width="1921" height="277" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621376264903" />
+    <state width="1921" height="344" key="GridCell.Tab.1.bottom" timestamp="1621376256748">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621364276584" />
-    <state width="1921" height="344" key="GridCell.Tab.1.center" timestamp="1621364276584">
+    <state width="1921" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621376256748" />
+    <state width="1921" height="344" key="GridCell.Tab.1.center" timestamp="1621376256747">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="344" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621364276584" />
-    <state width="1921" height="344" key="GridCell.Tab.1.left" timestamp="1621364276584">
+    <state width="1921" height="344" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621376256747" />
+    <state width="1921" height="344" key="GridCell.Tab.1.left" timestamp="1621376256747">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="344" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621364276584" />
-    <state width="1921" height="344" key="GridCell.Tab.1.right" timestamp="1621364276584">
+    <state width="1921" height="344" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621376256747" />
+    <state width="1921" height="344" key="GridCell.Tab.1.right" timestamp="1621376256747">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="344" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621364276584" />
+    <state width="1921" height="344" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1621376256747" />
     <state x="-1592" y="0" key="SettingsEditor" timestamp="1621349906240">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>

@@ -41,12 +41,21 @@ public class Util {
         return sb.toString();
     }
 
-    public static String[] split(Object s) {
-        String[] splitted = s.toString().split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-        for(int i = 0; i < splitted.length; i++) {
-            splitted[i] = splitted[i].trim();
+    public static String[] split(Object o) {
+        String s = o.toString();
+        List<String> elements = new ArrayList<>();
+        boolean quoted = false;
+        int substringStart = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if(s.charAt(i) == '"') {
+                quoted = !quoted;
+            } else if(s.charAt(i) == ',' && !quoted) {
+                elements.add(s.substring(substringStart, i).trim());
+                substringStart = i+1;
+            }
         }
-        return splitted;
+        elements.add(s.substring(substringStart).trim());
+        return elements.toArray(new String[0]);
     }
 
     public static String[] toStringArray(Iterable<Text> objects) {
