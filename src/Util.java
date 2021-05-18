@@ -34,5 +34,6 @@ public class Util {
         for(int i = 0; i < splitted.length; i++) {
             splitted[i] = splitted[i].trim();
         }
+        return splitted;
     }
 }
