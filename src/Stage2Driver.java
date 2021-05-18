@@ -13,8 +13,8 @@ public class Stage2Driver {
         /*
          * Validate that two arguments were passed from the command line.
          */
-        if (args.length != 3) {
-            System.out.printf("Usage: StubDriver <input dir> <input dir> <output dir>\n");
+        if (args.length != 2) {
+            System.out.printf("Usage: StubDriver <input dir> <output dir>\n");
             System.exit(-1);
         }
 
@@ -43,8 +43,8 @@ public class Stage2Driver {
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
 
-        FileInputFormat.setInputPaths(job, new Path(args[0]), new Path(args[1]));
-        FileOutputFormat.setOutputPath(job, new Path(args[2]));
+        FileInputFormat.setInputPaths(job, new Path(args[0]));
+        FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         /*
          * Start the MapReduce job and wait for it to finish.
