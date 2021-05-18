@@ -8,14 +8,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-public class Stage3Mapper extends Mapper<LongWritable, Text, Text, Text> {
+public class Stage3Mapper extends Mapper<Text, Text, Text, Text> {
 
     @Override
-    public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+    public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
         String[] splitted = Util.split(value);
         System.err.println(Arrays.toString(splitted));
-
-        String newKey = splitted[0] + " vs " + splitted[1] + " ref " + splitted[3];
 
         String weightLbsA = splitted[14];
         String weightLbsB = splitted[15];
@@ -45,7 +43,7 @@ public class Stage3Mapper extends Mapper<LongWritable, Text, Text, Text> {
         output.addAll(Arrays.asList(calculateBmiAndRoundToInteger(heightCmsA, weightLbsA), calculateBmiAndRoundToInteger(heightCmsB, weightLbsB)));
         output.addAll(input.subList(16, 28));
 
-        context.write(new Text(newKey), new Text(Util.join(output.toArray())));
+        context.write(key, new Text(Util.join(output.toArray())));
     }
 
     private String calculateHeightDiff(String heightA, String heightB) {
