@@ -7,19 +7,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Stage2Mapper extends Mapper<LongWritable, Text, Text, Text> {
+public class Stage2Mapper extends Mapper<Text, Text, Text, Text> {
 
     @Override
-    public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+    public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
         String[] splitted = Util.split(value);
         if(splitted.length != 22) {
             System.err.println("Invalid row length: " + splitted.length);
             System.err.println(splitted);
         }
-
-        String winner = splitted[0].equals(splitted[4]) ? splitted[0] : splitted[1];
-        String loser = winner.equals(splitted[0]) ? splitted[1] : splitted[0];
-        String referee = splitted[3];
 
         String[] head_a = splitted[16].split(" ");
         String[] head_b = splitted[17].split(" ");
@@ -43,8 +39,6 @@ public class Stage2Mapper extends Mapper<LongWritable, Text, Text, Text> {
         String leg_attempts_b = leg_b.length == 3 ? leg_b[2] : "";
         String leg_landed_b = leg_b.length == 3 ? leg_b[0] : "";
 
-
-        String newKey = winner + " vs " + loser + " ref " + referee;
         ArrayList<String> newValueArrayList = new ArrayList<>(Arrays.asList(splitted));
         List<String> cutList = newValueArrayList.subList(0, 16);
 
@@ -64,6 +58,6 @@ public class Stage2Mapper extends Mapper<LongWritable, Text, Text, Text> {
         cutList.add(leg_landed_b);
 
         String newValue = Util.join(cutList.toArray());
-        context.write(new Text(newKey), new Text(newValue));
+        context.write(key, new Text(newValue));
     }
 }

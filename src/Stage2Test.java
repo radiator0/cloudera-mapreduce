@@ -19,9 +19,9 @@ public class Stage2Test {
      * Declare harnesses that let you test a mapper, a reducer, and
      * a mapper and a reducer working together.
      */
-    MapDriver<LongWritable, Text, Text, Text> mapDriver;
+    MapDriver<Text, Text, Text, Text> mapDriver;
     ReduceDriver<Text, Text, Text, Text> reduceDriver;
-    MapReduceDriver<LongWritable, Text, Text, Text, Text, Text> mapReduceDriver;
+    MapReduceDriver<Text, Text, Text, Text, Text, Text> mapReduceDriver;
 
     /*
      * Set up the test. This method will be called before every test.
@@ -56,7 +56,7 @@ public class Stage2Test {
      */
     @Test
     public void testMapper() throws IOException {
-        LongWritable key = new LongWritable(0);
+        Text key = new Text("FIGHTER 1 vs FIGHTER 2 ref THE REFEREE");
         Text value = new Text("FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,KO/TKO,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,5 of 11,15 of 32,1 of 2,2 of 2,0 of 0,0 of 0");
         mapDriver.setInput(key, value);
 
@@ -71,7 +71,7 @@ public class Stage2Test {
 
     @Test
     public void testMapperWithNulls() throws IOException {
-        LongWritable key = new LongWritable(0);
+        Text key = new Text("FIGHTER 1 vs FIGHTER 2 ref THE REFEREE");
         Text value = new Text("FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,KO/TKO,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,,,,,,");
         mapDriver.setInput(key, value);
 
