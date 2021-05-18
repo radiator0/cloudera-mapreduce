@@ -3,22 +3,20 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
-import java.util.logging.Logger;
 
 public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
-    private static final Logger logger = Logger.getLogger(Stage1Mapper.class.getName());
 
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String line = value.toString();
         String[] splitted = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-        logger.info("Row length: " + splitted.length);
+        System.err.println("Row length: " + splitted.length);
         if(splitted.length == 145) {
             MapRajeevw(key, value, context, splitted);
         } else if (splitted.length == 46) {
             MapTheman(key, value, context, splitted);
         } else {
-            logger.info("Invalid row length: " + splitted.length);
+            System.err.println("Invalid row length: " + splitted.length);
         }
     }
 

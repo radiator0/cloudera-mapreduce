@@ -1,4 +1,3 @@
-import java.util.logging.Logger;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -9,10 +8,9 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Stage1Driver {
-    private static final Logger logger = Logger.getLogger(Stage1Driver.class.getName());
 
     public static void main(String[] args) throws Exception {
-        logger.info("Start...");
+        System.err.println("Start...");
         /*
          * Validate that two arguments were passed from the command line.
          */
