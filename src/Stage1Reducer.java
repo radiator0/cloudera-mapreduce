@@ -19,6 +19,6 @@ public class Stage1Reducer extends Reducer<Text, Text, Text, Text> {
             second = Util.repeat(",", 6);
         }
 
-        context.write(key, new Text(first +  second));
+        context.write(key, new Text(first + "," +  second));
     }
 }
