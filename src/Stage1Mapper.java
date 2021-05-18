@@ -48,7 +48,7 @@ public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
         String newValue = Util.join(new String[] {
                 winner, loser, referee, splitted[3], splitted[6], splitted[7], splitted[138], splitted[139], splitted[140], splitted[141]
         });
-        context.write(new Text(newKey), new Text("R" + newValue));
+        context.write(new Text(newKey), new Text("1_" + newValue));
     }
 
     private void MapTheman(LongWritable key, Text value, Context context, String[] splitted) throws IOException, InterruptedException {
@@ -63,6 +63,6 @@ public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
         String newValue = Util.join(new String[] {
                 winner, loser, referee
         });
-        context.write(new Text(newKey), new Text("T" + newValue));
+        context.write(new Text(newKey), new Text("2_" + newValue));
     }
 }
