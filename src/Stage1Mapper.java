@@ -1,13 +1,12 @@
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
-    private static final Log logger = LogFactory.getLog(Stage1Mapper.class);
+    private static final Logger logger = Logger.getLogger(Stage1Mapper.class.getName());
 
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {

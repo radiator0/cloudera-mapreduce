@@ -1,5 +1,4 @@
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.logging.Logger;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -10,7 +9,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Stage1Driver {
-    private static final Log logger = LogFactory.getLog(Stage1Mapper.class);
+    private static final Logger logger = Logger.getLogger(Stage1Driver.class.getName());
 
     public static void main(String[] args) throws Exception {
         logger.info("Start...");
@@ -38,7 +37,7 @@ public class Stage1Driver {
          * Specify an easily-decipherable name for the job.
          * This job name will appear in reports and logs.
          */
-        job.setJobName("Stub Driver");
+        job.setJobName("Stage1 Driver");
 
         job.setMapperClass(Stage1Mapper.class);
         job.setReducerClass(Stage1Reducer.class);
@@ -49,10 +48,6 @@ public class Stage1Driver {
 
         FileInputFormat.setInputPaths(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
-
-        /*
-         * TODO implement
-         */
 
         /*
          * Start the MapReduce job and wait for it to finish.
