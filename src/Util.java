@@ -1,6 +1,9 @@
 import com.google.common.collect.Iterables;
 import org.apache.hadoop.io.Text;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Util {
     public static String join(Object...array) {
         if (array.length > 0) {
@@ -47,12 +50,11 @@ public class Util {
     }
 
     public static String[] toStringArray(Iterable<Text> objects) {
-        Object[] arr = Iterables.toArray(objects, Text.class);
-        String[] newArr = new String[arr.length];
-        for(int i = 0; i < newArr.length; i++) {
-            newArr[i] = arr[i].toString();
+        List<String> elements = new ArrayList<>();
+        for (Text t: objects) {
+            elements.add(t.toString());
         }
-        return newArr;
+        return elements.toArray(new String[0]);
     }
 
     public static String repeat(String s, int n) {
