@@ -10,17 +10,20 @@ public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String line = value.toString();
         String[] splitted = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-        System.err.println("Row length: " + splitted.length);
-        if(splitted.length == 145) {
+        if(splitted.length == 144) {
             MapRajeevw(key, value, context, splitted);
         } else if (splitted.length == 46) {
             MapTheman(key, value, context, splitted);
         } else {
             System.err.println("Invalid row length: " + splitted.length);
+            System.err.println(value);
         }
     }
 
     private void MapRajeevw(LongWritable key, Text value, Context context, String[] splitted) throws IOException, InterruptedException {
+        if(splitted[0].equals("R_fighter")) {
+            return;
+        }
         String winnerColor = splitted[5];
         String winner = null;
         String loser = null;
@@ -44,12 +47,15 @@ public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
         }
         String newKey = winner + " vs " + loser + " ref " + referee;
         String newValue = Util.Join(new String[] {
-                winner, loser, referee, splitted[3], splitted[6], splitted[7], splitted[139], splitted[140], splitted[141], splitted[142]
+                winner, loser, referee, splitted[3], splitted[6], splitted[7], splitted[138], splitted[139], splitted[140], splitted[141]
         });
-        context.write(new Text(newKey), new Text(newValue));
+        context.write(new Text(newKey), new Text("R" + newValue));
     }
 
     private void MapTheman(LongWritable key, Text value, Context context, String[] splitted) throws IOException, InterruptedException {
+        if(splitted[0].equals("Title")) {
+            return;
+        }
         String winner = splitted[2];
         String loser = splitted[1];
         String referee = splitted[8];
@@ -58,6 +64,6 @@ public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
         String newValue = Util.Join(new String[] {
                 winner, loser, referee
         });
-        context.write(new Text(newKey), new Text(newValue));
+        context.write(new Text(newKey), new Text("T" + newValue));
     }
 }
