@@ -8,8 +8,7 @@ public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
 
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        String line = value.toString();
-        String[] splitted = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+        String[] splitted = Util.split(value);
         if(splitted.length == 144) {
             MapRajeevw(key, value, context, splitted);
         } else if (splitted.length == 46) {
@@ -46,7 +45,7 @@ public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
             }
         }
         String newKey = winner + " vs " + loser + " ref " + referee;
-        String newValue = Util.Join(new String[] {
+        String newValue = Util.join(new String[] {
                 winner, loser, referee, splitted[3], splitted[6], splitted[7], splitted[138], splitted[139], splitted[140], splitted[141]
         });
         context.write(new Text(newKey), new Text("R" + newValue));
@@ -61,7 +60,7 @@ public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
         String referee = splitted[8];
 
         String newKey = winner + " vs " + loser + " ref " + referee;
-        String newValue = Util.Join(new String[] {
+        String newValue = Util.join(new String[] {
                 winner, loser, referee
         });
         context.write(new Text(newKey), new Text("T" + newValue));
