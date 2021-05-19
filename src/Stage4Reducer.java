@@ -36,7 +36,7 @@ public class Stage4Reducer extends Reducer<Text, Text, Text, Text> {
         String[] tables = new String[] { "fights", "fighters", "physiques", "positions", "results", "statistics" };
         for (String table: tables) {
             if(s.startsWith("_" + table)) {
-                String rowKey = s.substring(table.length() + 2);
+                String rowKey = s.substring(table.length() + 1);
                 return new String[] { table, rowKey };
             }
         }
