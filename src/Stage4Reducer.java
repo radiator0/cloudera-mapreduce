@@ -1,7 +1,6 @@
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
-import org.apache.hadoop.mrunit.types.Pair;
 
 import java.io.IOException;
 
