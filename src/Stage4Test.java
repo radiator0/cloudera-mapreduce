@@ -1,6 +1,4 @@
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
-import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.mrunit.mapreduce.MapDriver;
 import org.apache.hadoop.mrunit.mapreduce.MapReduceDriver;
 import org.apache.hadoop.mrunit.mapreduce.ReduceDriver;
@@ -11,7 +9,6 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 public class Stage4Test {

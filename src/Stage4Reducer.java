@@ -20,25 +20,25 @@ public class Stage4Reducer extends Reducer<Text, Text, Text, Text> {
 
     @Override
     public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-        Pair<String, Text> tableAndKey = splitToTableAndKey(key);
+        String[] tableAndKey = splitToTableAndKey(key);
         if(tableAndKey == null) {
             System.err.println("Malformed key: " + key.toString());
             System.err.println("For values: " + Util.join(values));
             return;
         }
         for (Text t : values) {
-            multipleOutputs.write(tableAndKey.getFirst(), tableAndKey.getSecond(), new Text(t.toString()), tableAndKey.getFirst());
+            multipleOutputs.write(tableAndKey[0], new Text(tableAndKey[1]), new Text(t.toString()), tableAndKey[0]);
             return;
         }
     }
 
-    private Pair<String, Text> splitToTableAndKey(Text key) {
+    private String[] splitToTableAndKey(Text key) {
         String s = key.toString();
         String[] tables = new String[] { "fights", "fighters", "physiques", "positions", "results", "statistics" };
         for (String table: tables) {
             if(s.startsWith("_" + table)) {
                 String rowKey = s.substring(table.length() + 2);
-                return new Pair<>(table, new Text(rowKey));
+                return new String[] { table, rowKey };
             }
         }
         return null;
