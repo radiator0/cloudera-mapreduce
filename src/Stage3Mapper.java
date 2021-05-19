@@ -16,6 +16,7 @@ public class Stage3Mapper extends Mapper<Text, Text, Text, Text> {
         if (splitted.length != 28) {
             System.err.println("Invalid row length: " + splitted.length);
             System.err.println(Util.join(splitted));
+            return;
         }
 
         String weightLbsA = splitted[13];

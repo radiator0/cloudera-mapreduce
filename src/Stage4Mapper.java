@@ -25,9 +25,10 @@ public class Stage4Mapper extends Mapper<Text, Text, Text, Text> {
     @Override
     public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
         String[] splitted = Util.split(value);
-        if (splitted.length != 28) {
+        if (splitted.length != 31) {
             System.err.println("Invalid row length: " + splitted.length);
             System.err.println(Util.join(splitted));
+            return;
         }
 
         Object[] fight = new String[] { splitted[2], splitted[3], splitted[8], splitted[9], splitted[18] };

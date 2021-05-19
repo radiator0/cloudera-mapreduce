@@ -1,4 +1,6 @@
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
+import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.mrunit.mapreduce.MapDriver;
 import org.apache.hadoop.mrunit.mapreduce.MapReduceDriver;
 import org.apache.hadoop.mrunit.mapreduce.ReduceDriver;
@@ -59,7 +61,7 @@ public class Stage4Test {
         Text value = new Text("Aaron Riley,Jorge Gurgel,2008-11-15,Mario Yamasaki,WINNER,LOSER,true,false,Lightweight,False,Southpaw,Orthodox,2.54,-2.54,175.26,175.26,23,24,Decision - Unanimous,172,63,166,46,27,21,26,21,23,14,7,3");
         mapDriver.setInput(key, value);
 
-        List<Pair<Text, Text>> result = mapDriver.run();
+        List<Pair<Text, Text>> result = mapReduceDriver.run();
         System.out.println(result);
         //assertEquals(1, result.size());
         //String expectedK = "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE";
