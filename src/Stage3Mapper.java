@@ -26,7 +26,7 @@ public class Stage3Mapper extends Mapper<Text, Text, Text, Text> {
 
         String DRAW_TEXT = "DRAW", WINNER_TEXT = "WINNER", LOSER_TEXT = "LOSER";
         boolean isWinnerA = splitted[4].equals(splitted[0]);
-        boolean isDraw = splitted[4].equals(DRAW_TEXT);
+        boolean isDraw = splitted[4].equalsIgnoreCase(DRAW_TEXT);
 
         List<String> output = new ArrayList<>();
         ArrayList<String> input = new ArrayList<>(Arrays.asList(splitted));
