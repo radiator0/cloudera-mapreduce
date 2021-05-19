@@ -22,7 +22,7 @@ public class Stage4Mapper extends Mapper<Text, Text, Text, Text> {
         Object[] fight = new String[] { splitted[2], splitted[3], splitted[8], splitted[9], splitted[18] };
         Text fightKey = new Text(Util.join("-", fight));
 
-        context.write(new Text("_fights" + fightKey), new Text(Util.join(fight)));
+        context.write(new Text("_fights" + fightKey), new Text(Util.join("\t", fight)));
 
         addFighterRelevantData(splitted, 0, fightKey, context);
         addFighterRelevantData(splitted, 1, fightKey, context);
@@ -47,10 +47,10 @@ public class Stage4Mapper extends Mapper<Text, Text, Text, Text> {
 
         if(Util.nonNullOrEmpty(fighterKey, physiqueKey, positionKey, resultKey, statisticKey)) {
             context.write(new Text("_fighters" + fighterKey), fighterKey);
-            context.write(new Text("_physiques" + physiqueKey), new Text(Util.join(physique)));
+            context.write(new Text("_physiques" + physiqueKey), new Text(Util.join("\t", physique)));
             context.write(new Text("_positions" + positionKey), positionKey);
             context.write(new Text("_results" + resultKey), resultKey);
-            context.write(new Text("_statistics" + statisticKey), new Text(Util.join(statistic)));
+            context.write(new Text("_statistics" + statisticKey), new Text(Util.join("\t", statistic)));
         }
     }
 }
