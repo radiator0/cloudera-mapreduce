@@ -42,12 +42,12 @@ public class Stage4Driver {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
         job.setInputFormatClass(KeyValueTextInputFormat.class);
-        MultipleOutputs.addNamedOutput(job, "fighters/d", TextOutputFormat.class, Text.class, Text.class);
-        MultipleOutputs.addNamedOutput(job, "physiques/d", TextOutputFormat.class, Text.class, Text.class);
-        MultipleOutputs.addNamedOutput(job, "positions/d", TextOutputFormat.class, Text.class, Text.class);
-        MultipleOutputs.addNamedOutput(job, "results/d", TextOutputFormat.class, Text.class, Text.class);
-        MultipleOutputs.addNamedOutput(job, "fights/d", TextOutputFormat.class, Text.class, Text.class);
-        MultipleOutputs.addNamedOutput(job, "statistics/d", TextOutputFormat.class, Text.class, Text.class);
+        MultipleOutputs.addNamedOutput(job, "fighters", TextOutputFormat.class, Text.class, Text.class);
+        MultipleOutputs.addNamedOutput(job, "physiques", TextOutputFormat.class, Text.class, Text.class);
+        MultipleOutputs.addNamedOutput(job, "positions", TextOutputFormat.class, Text.class, Text.class);
+        MultipleOutputs.addNamedOutput(job, "results", TextOutputFormat.class, Text.class, Text.class);
+        MultipleOutputs.addNamedOutput(job, "fights", TextOutputFormat.class, Text.class, Text.class);
+        MultipleOutputs.addNamedOutput(job, "statistics", TextOutputFormat.class, Text.class, Text.class);
         FileInputFormat.setInputPaths(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 

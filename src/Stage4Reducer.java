@@ -27,7 +27,7 @@ public class Stage4Reducer extends Reducer<Text, Text, Text, Text> {
             return;
         }
         for (Text t : values) {
-            multipleOutputs.write(tableAndKey.getFirst(), tableAndKey.getSecond(), new Text(t.toString()));
+            multipleOutputs.write(tableAndKey.getFirst(), tableAndKey.getSecond(), new Text(t.toString()), tableAndKey.getFirst());
             return;
         }
     }
@@ -38,7 +38,7 @@ public class Stage4Reducer extends Reducer<Text, Text, Text, Text> {
         for (String table: tables) {
             if(s.startsWith("_" + table)) {
                 String rowKey = s.substring(table.length() + 2);
-                return new Pair<>(table + "/d", new Text(rowKey));
+                return new Pair<>(table, new Text(rowKey));
             }
         }
         return null;
