@@ -11,17 +11,18 @@ public class Stage3Mapper extends Mapper<Text, Text, Text, Text> {
 
     @Override
     public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
+
         String[] splitted = Util.split(value);
         if (splitted.length != 28) {
             System.err.println("Invalid row length: " + splitted.length);
             System.err.println(Util.join(splitted));
         }
 
-        String weightLbsA = splitted[14];
-        String weightLbsB = splitted[15];
+        String weightLbsA = splitted[13];
+        String weightLbsB = splitted[14];
 
-        String heightCmsA = splitted[10];
-        String heightCmsB = splitted[11];
+        String heightCmsA = splitted[9];
+        String heightCmsB = splitted[10];
 
         String DRAW_TEXT = "DRAW", WINNER_TEXT = "WINNER", LOSER_TEXT = "LOSER";
         boolean isWinnerA = splitted[4].equals(splitted[0]);
@@ -39,11 +40,11 @@ public class Stage3Mapper extends Mapper<Text, Text, Text, Text> {
                         String.valueOf(!isDraw && !isWinnerA)
                 )
         );
-        output.addAll(input.subList(5, 10));
+        output.addAll(input.subList(5, 9));
         output.addAll(Arrays.asList(calculateHeightDiff(heightCmsA, heightCmsB), calculateHeightDiff(heightCmsB, heightCmsA)));
-        output.addAll(input.subList(12, 14));
+        output.addAll(input.subList(11, 13));
         output.addAll(Arrays.asList(calculateBmiAndRoundToInteger(heightCmsA, weightLbsA), calculateBmiAndRoundToInteger(heightCmsB, weightLbsB)));
-        output.addAll(input.subList(16, 28));
+        output.addAll(input.subList(15, 28));
 
         context.write(key, new Text(Util.join(output.toArray())));
     }
