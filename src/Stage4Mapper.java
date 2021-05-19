@@ -10,18 +10,6 @@ import java.util.Locale;
 
 public class Stage4Mapper extends Mapper<Text, Text, Text, Text> {
 
-    private MultipleOutputs multipleOutputs;
-
-    @Override
-    protected void setup(Context context) {
-        multipleOutputs = new MultipleOutputs(context);
-    }
-
-    @Override
-    protected void cleanup(Context context) throws IOException, InterruptedException {
-        multipleOutputs.close();
-    }
-
     @Override
     public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
         String[] splitted = Util.split(value);
@@ -34,13 +22,13 @@ public class Stage4Mapper extends Mapper<Text, Text, Text, Text> {
         Object[] fight = new String[] { splitted[2], splitted[3], splitted[8], splitted[9], splitted[18] };
         Text fightKey = new Text(Util.join("-", fight));
 
-        multipleOutputs.write("fights", fightKey, new Text(Util.join(fight)));
+        context.write(new Text("_fights" + fightKey), new Text(Util.join(fight)));
 
-        addFighterRelevantData(splitted, 0, fightKey);
-        addFighterRelevantData(splitted, 1, fightKey);
+        addFighterRelevantData(splitted, 0, fightKey, context);
+        addFighterRelevantData(splitted, 1, fightKey, context);
     }
 
-    private void addFighterRelevantData(String[] splitted, int index, Text fightKey) throws IOException, InterruptedException {
+    private void addFighterRelevantData(String[] splitted, int index, Text fightKey, Context context) throws IOException, InterruptedException {
         Text fighterKey = new Text(splitted[index]);
 
         // bmi, reach, height difference
@@ -58,11 +46,11 @@ public class Stage4Mapper extends Mapper<Text, Text, Text, Text> {
         Text statisticKey = new Text(Util.join("-", statistic));
 
         if(Util.nonNullOrEmpty(fighterKey, physiqueKey, positionKey, resultKey, statisticKey)) {
-            multipleOutputs.write("fighters", fighterKey, fighterKey);
-            multipleOutputs.write("physiques", physiqueKey, new Text(Util.join(physique)));
-            multipleOutputs.write("positions", positionKey, positionKey);
-            multipleOutputs.write("results", resultKey, resultKey);
-            multipleOutputs.write("statistics", statisticKey, new Text(Util.join(statistic)));
+            context.write(new Text("_fighters" + fighterKey), fighterKey);
+            context.write(new Text("_physiques" + physiqueKey), new Text(Util.join(physique)));
+            context.write(new Text("_positions" + positionKey), positionKey);
+            context.write(new Text("_results" + resultKey), resultKey);
+            context.write(new Text("_statistics" + statisticKey), new Text(Util.join(statistic)));
         }
     }
 }
