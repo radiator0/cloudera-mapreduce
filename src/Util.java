@@ -19,6 +19,20 @@ public class Util {
         }
     }
 
+    public static String join(String joiner, Object...array) {
+        if (array.length > 0) {
+            StringBuilder sb = new StringBuilder();
+            for (Object el : array) {
+                String s = el.toString().trim();
+                sb.append(s).append(joiner);
+            }
+            sb.deleteCharAt(sb.length() - 1);
+            return sb.toString();
+        } else {
+            return "";
+        }
+    }
+
     public static String joinIfEveryoneNonEmpty(Object...array) {
         if(nonNullOrEmpty(array)) {
             return join(array);
