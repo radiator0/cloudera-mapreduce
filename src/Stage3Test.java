@@ -56,14 +56,14 @@ public class Stage3Test {
     @Test
     public void testMapperWinLoser() throws IOException {
         Text key = new Text("FIGHTER 1 vs FIGHTER 2 ref THE REFEREE");
-        Text value = new Text("FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,11,5,32,15,2,1,2,2,0,0,0,0");
+        Text value = new Text("FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,KO/TKO,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,11,5,32,15,2,1,2,2,0,0,0,0");
         mapDriver.setInput(key, value);
 
         List<Pair<Text, Text>> result = mapDriver.run();
 
         assertEquals(1, result.size());
         String expectedK = "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE";
-        String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,WINNER,LOSER,true,false,Bantamweight,False,,Orthodox,Orthodox,5.08,-5.08,177.8,170.18,21,22,11,5,32,15,2,1,2,2,0,0,0,0";
+        String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,WINNER,LOSER,true,false,Bantamweight,False,KO/TKO,Orthodox,Orthodox,5.08,-5.08,177.8,170.18,21,22,11,5,32,15,2,1,2,2,0,0,0,0";
         assertEquals(expectedK, result.get(0).getFirst().toString());
         assertEquals(expectedV, result.get(0).getSecond().toString());
     }
@@ -82,6 +82,24 @@ public class Stage3Test {
         assertEquals(1, result.size());
         String expectedK = "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE";
         String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,DRAW,DRAW,false,false,Bantamweight,False,,Orthodox,Orthodox,5.08,-5.08,177.8,170.18,21,22,11,5,32,15,2,1,2,2,0,0,0,0";
+        assertEquals(expectedK, result.get(0).getFirst().toString());
+        assertEquals(expectedV, result.get(0).getSecond().toString());
+    }
+
+    /*
+     * Test the mapper with Nulls.
+     */
+    @Test
+    public void testMapperWithNulls() throws IOException {
+        Text key = new Text("FIGHTER 1 vs FIGHTER 2 ref THE REFEREE");
+        Text value = new Text("FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,,,,,,,,,,,,");
+        mapDriver.setInput(key, value);
+
+        List<Pair<Text, Text>> result = mapDriver.run();
+
+        assertEquals(1, result.size());
+        String expectedK = "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE";
+        String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,WINNER,LOSER,true,false,Bantamweight,False,,Orthodox,Orthodox,5.08,-5.08,177.8,170.18,21,22,,,,,,,,,,,,";
         assertEquals(expectedK, result.get(0).getFirst().toString());
         assertEquals(expectedV, result.get(0).getSecond().toString());
     }

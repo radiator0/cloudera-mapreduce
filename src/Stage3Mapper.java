@@ -1,4 +1,3 @@
-import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
@@ -13,7 +12,10 @@ public class Stage3Mapper extends Mapper<Text, Text, Text, Text> {
     @Override
     public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
         String[] splitted = Util.split(value);
-        System.err.println(Arrays.toString(splitted));
+        if (splitted.length != 28) {
+            System.err.println("Invalid row length: " + splitted.length);
+            System.err.println(Util.join(splitted));
+        }
 
         String weightLbsA = splitted[14];
         String weightLbsB = splitted[15];
