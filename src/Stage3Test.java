@@ -1,4 +1,3 @@
-import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mrunit.mapreduce.MapDriver;
 import org.apache.hadoop.mrunit.mapreduce.MapReduceDriver;
@@ -19,9 +18,9 @@ public class Stage3Test {
      * Declare harnesses that let you test a mapper, a reducer, and
      * a mapper and a reducer working together.
      */
-    MapDriver<LongWritable, Text, Text, Text> mapDriver;
+    MapDriver<Text, Text, Text, Text> mapDriver;
     ReduceDriver<Text, Text, Text, Text> reduceDriver;
-    MapReduceDriver<LongWritable, Text, Text, Text, Text, Text> mapReduceDriver;
+    MapReduceDriver<Text, Text, Text, Text, Text, Text> mapReduceDriver;
 
     /*
      * Set up the test. This method will be called before every test.
@@ -56,7 +55,7 @@ public class Stage3Test {
      */
     @Test
     public void testMapperWinLoser() throws IOException {
-        LongWritable key = new LongWritable(0);
+        Text key = new Text("FIGHTER 1 vs FIGHTER 2 ref THE REFEREE");
         Text value = new Text("FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,11,5,32,15,2,1,2,2,0,0,0,0");
         mapDriver.setInput(key, value);
 
@@ -74,7 +73,7 @@ public class Stage3Test {
      */
     @Test
     public void testMapperDraw() throws IOException {
-        LongWritable key = new LongWritable(0);
+        Text key = new Text("FIGHTER 1 vs FIGHTER 2 ref THE REFEREE");
         Text value = new Text("FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,DRAW,Bantamweight,False,,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,11,5,32,15,2,1,2,2,0,0,0,0");
         mapDriver.setInput(key, value);
 
