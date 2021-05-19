@@ -26,7 +26,7 @@ public class Stage4Reducer extends Reducer<Text, Text, Text, Text> {
             return;
         }
         for (Text t : values) {
-            multipleOutputs.write(tableAndKey[0], new Text(tableAndKey[1]), new Text(t.toString()), tableAndKey[0]);
+            multipleOutputs.write(tableAndKey[0], new Text(tableAndKey[1]), new Text(t.toString()), tableAndKey[0] + "/" + tableAndKey[0]);
             return;
         }
     }
