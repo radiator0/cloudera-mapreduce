@@ -49,32 +49,7 @@ public class Stage1Driver {
         job.setOutputValueClass(Text.class);
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
-
-        /*String directory1 = Paths.get(args[0]).getParent().toString();
-        String directory2 = Paths.get(args[1]).getParent().toString();
-
-        final String fileName1 = Paths.get(args[0]).getFileName().toString();
-        final String fileName2 = Paths.get(args[1]).getFileName().toString();
-
-        File inputFile1 = directory1.listFiles(new FilenameFilter()
-        {
-            public boolean accept(File dir, String name)
-            {
-                return name.startsWith(fileName1);
-            }
-        })[0];
-
-        File inputFile2 = directory2.listFiles(new FilenameFilter()
-        {
-            public boolean accept(File dir, String name)
-            {
-                return name.startsWith(fileName2);
-            }
-        })[0];
-
-        FileSystem fs = FileSystem.get(job.getConfiguration());
-        fs.listFiles(new Path(directory1), false).;
-        org.apache.hadoop.fs.FileUtil.listFiles(new File(directory1))*/
+        
         FileInputFormat.setInputPaths(job, new Path(args[0]), new Path(args[1]));
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
