@@ -9,6 +9,8 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
+import java.util.Arrays;
+
 public class Stage4Driver {
 
     public static void main(String[] args) throws Exception {
@@ -59,16 +61,19 @@ public class Stage4Driver {
          */
         boolean success = job.waitForCompletion(true);
         if(success){
-            Path from = new Path(args[1],"fighters");
-            Path to = new Path("/ufc/final");
-            FileSystem fs = from.getFileSystem(job.getConfiguration()); // get file system
-            for (FileStatus status : fs.listStatus(from)) { // list all files in 'from' folder
-                Path file = status.getPath(); // get path to file in 'from' folder
-                Path dst = new Path(to, file.getName()); // create new file name
-                fs.rename(file, dst); // move file from 'from' folder to 'to' folder
+            for (String dirName : Arrays.asList("fighters", "physiques", "positions", "results", "fights", "statistics")) {
+                Path from = new Path(args[1],dirName);
+                Path to = new Path("/ufc/final", dirName);
+                FileSystem fs = from.getFileSystem(job.getConfiguration());
+                for (FileStatus status : fs.listStatus(from)) {
+                    Path file = status.getPath();
+                    Path dst = new Path(to, file.getName() + "_" + from.getParent().getName());
+                    fs.rename(file, dst);
+                }
             }
         }
         System.exit(success ? 0 : 1);
     }
+
 }
 
