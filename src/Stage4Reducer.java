@@ -3,6 +3,10 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class Stage4Reducer extends Reducer<Text, Text, Text, Text> {
     private MultipleOutputs multipleOutputs;
@@ -25,8 +29,18 @@ public class Stage4Reducer extends Reducer<Text, Text, Text, Text> {
             System.err.println("For values: " + Util.join(values));
             return;
         }
+
+        String newKey = null;
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(tableAndKey[1].getBytes(StandardCharsets.UTF_8));
+            newKey = new BigInteger(1, md.digest()).toString();
+        } catch (NoSuchAlgorithmException e) {
+            newKey = tableAndKey[1];
+        }
+
         for (Text t : values) {
-            multipleOutputs.write(tableAndKey[0], new Text(tableAndKey[1]), new Text(t.toString()), tableAndKey[0] + "/" + tableAndKey[0]);
+            multipleOutputs.write(tableAndKey[0], new Text(newKey), new Text(t.toString()), tableAndKey[0] + "/" + tableAndKey[0]);
             return;
         }
     }

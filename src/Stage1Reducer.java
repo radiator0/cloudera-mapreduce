@@ -16,7 +16,7 @@ public class Stage1Reducer extends Reducer<Text, Text, Text, Text> {
         if(v.length > 1) {
             second = v[1].substring(2);
         } else {
-            second = Util.repeat(",", 7);
+            second = Util.repeat(",", 5);
         }
 
         context.write(key, new Text(first + "," +  second));
