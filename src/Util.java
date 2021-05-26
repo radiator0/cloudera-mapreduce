@@ -1,11 +1,10 @@
-import com.google.common.collect.Iterables;
 import org.apache.hadoop.io.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Util {
-    public static String join(Object...array) {
+    public static String joinElements(Object...array) {
         if (array.length > 0) {
             StringBuilder sb = new StringBuilder();
             for (Object el : array) {
@@ -35,7 +34,7 @@ public class Util {
 
     public static String joinIfEveryoneNonEmpty(Object...array) {
         if(nonNullOrEmpty(array)) {
-            return join(array);
+            return joinElements(array);
         } else {
             return null;
         }

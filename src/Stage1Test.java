@@ -8,12 +8,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 public class Stage1Test {
 
@@ -142,20 +140,5 @@ public class Stage1Test {
         System.out.println(result);
 
         assertEquals(0, result.size());
-    }
-
-    /*
-     * Test the mapper and reducer working together.
-     */
-    @Test
-    public void testMapReduce() {
-
-        /*
-         * For this test, the mapper's input will be "1 cat cat dog"
-         * The expected output (from the reducer) is "cat 2", "dog 1".
-         * TODO: implement
-         */
-        fail("Please implement test.");
-
     }
 }

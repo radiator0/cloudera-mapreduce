@@ -15,7 +15,7 @@ public class Stage4Mapper extends Mapper<Text, Text, Text, Text> {
         String[] splitted = Util.split(value);
         if (splitted.length != 31) {
             System.err.println("Invalid row length: " + splitted.length);
-            System.err.println(Util.join(splitted));
+            System.err.println(Util.joinElements(splitted));
             return;
         }
 

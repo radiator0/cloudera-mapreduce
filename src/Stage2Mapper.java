@@ -13,7 +13,7 @@ public class Stage2Mapper extends Mapper<Text, Text, Text, Text> {
         String[] splitted = Util.split(value);
         if(splitted.length != 22) {
             System.err.println("Invalid row length: " + splitted.length);
-            System.err.println(Util.join(splitted));
+            System.err.println(Util.joinElements(splitted));
             return;
         }
 
@@ -57,7 +57,7 @@ public class Stage2Mapper extends Mapper<Text, Text, Text, Text> {
         cutList.add(leg_attempts_b);
         cutList.add(leg_landed_b);
 
-        String newValue = Util.join(cutList.toArray());
+        String newValue = Util.joinElements(cutList.toArray());
         context.write(key, new Text(newValue));
     }
 }

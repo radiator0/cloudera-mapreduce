@@ -15,7 +15,7 @@ public class Stage3Mapper extends Mapper<Text, Text, Text, Text> {
         String[] splitted = Util.split(value);
         if (splitted.length != 28) {
             System.err.println("Invalid row length: " + splitted.length);
-            System.err.println(Util.join(splitted));
+            System.err.println(Util.joinElements(splitted));
             return;
         }
 
@@ -47,7 +47,7 @@ public class Stage3Mapper extends Mapper<Text, Text, Text, Text> {
         output.addAll(Arrays.asList(calculateBmiAndRoundToInteger(heightCmsA, weightLbsA), calculateBmiAndRoundToInteger(heightCmsB, weightLbsB)));
         output.addAll(input.subList(15, 28));
 
-        context.write(key, new Text(Util.join(output.toArray())));
+        context.write(key, new Text(Util.joinElements(output.toArray())));
     }
 
     private String calculateHeightDiff(String heightA, String heightB) {

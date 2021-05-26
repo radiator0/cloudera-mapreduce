@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 public class Stage2Test {
 
@@ -81,37 +80,5 @@ public class Stage2Test {
         String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,KO/TKO,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0,,,,,,,,,,,,";
         assertEquals(expectedK, result.get(0).getFirst().toString());
         assertEquals(expectedV, result.get(0).getSecond().toString());
-    }
-
-
-    /*
-     * Test the reducer.
-     */
-    @Test
-    public void testReducer() {
-
-        /*
-         * For this test, the reducer's input will be "cat 1 1".
-         * The expected output is "cat 2".
-         * TODO: implement
-         */
-        fail("Please implement test.");
-
-    }
-
-
-    /*
-     * Test the mapper and reducer working together.
-     */
-    @Test
-    public void testMapReduce() {
-
-        /*
-         * For this test, the mapper's input will be "1 cat cat dog"
-         * The expected output (from the reducer) is "cat 2", "dog 1".
-         * TODO: implement
-         */
-        fail("Please implement test.");
-
     }
 }

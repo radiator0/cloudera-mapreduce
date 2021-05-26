@@ -76,7 +76,7 @@ public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
         }
 
         String newKey = winner + " vs " + loser + " ref " + referee;
-        String newValue = Util.join(
+        String newValue = Util.joinElements(
                 splitted[4],
                 splitted[winnerStatsStart], splitted[loserStatsStart],
                 splitted[winnerStatsStart + 1], splitted[loserStatsStart + 1],
