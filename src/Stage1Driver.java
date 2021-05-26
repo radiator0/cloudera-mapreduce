@@ -6,9 +6,14 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
+import java.io.File;
+import java.io.FilenameFilter;
+import java.nio.file.Paths;
+
 public class Stage1Driver {
 
     public static void main(String[] args) throws Exception {
+        args = new String[] {"C:\\tmp\\XD\\ee", "C:\\tmp\\XD\\gg", "C:\\jjjj\\hhhh"};
         System.err.println("Start...");
         /*
          * Validate that two arguments were passed from the command line.
@@ -43,7 +48,30 @@ public class Stage1Driver {
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
 
-        FileInputFormat.setInputPaths(job, new Path(args[0]), new Path(args[1]));
+        File directory1 = new File(Paths.get(args[0]).getParent().toString());
+        File directory2 = new File(Paths.get(args[1]).getParent().toString());
+
+        final String fileName1 = Paths.get(args[0]).getFileName().toString();
+        final String fileName2 = Paths.get(args[1]).getFileName().toString();
+
+        File inputFile1 = directory1.listFiles(new FilenameFilter()
+        {
+            public boolean accept(File dir, String name)
+            {
+                return name.startsWith(fileName1);
+            }
+        })[0];
+
+        File inputFile2 = directory2.listFiles(new FilenameFilter()
+        {
+            public boolean accept(File dir, String name)
+            {
+                return name.startsWith(fileName2);
+            }
+        })[0];
+
+
+        FileInputFormat.setInputPaths(job, new Path(inputFile1.getPath()), new Path(inputFile2.getPath()));
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
         /*
