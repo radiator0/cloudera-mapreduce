@@ -1,3 +1,5 @@
+import org.apache.hadoop.fs.FileStatus;
+import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -7,15 +9,17 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
+import java.util.Arrays;
+
 public class Stage4Driver {
 
     public static void main(String[] args) throws Exception {
         System.err.println("Start...");
         /*
-         * Validate that two arguments were passed from the command line.
+         * Validate that three arguments were passed from the command line.
          */
-        if (args.length != 2) {
-            System.out.printf("Usage: StubDriver <input dir> <output dir>\n");
+        if (args.length != 3) {
+            System.out.printf("Usage: StubDriver <input dir> <output dir> <final dir>\n");
             System.exit(-1);
         }
 
@@ -56,7 +60,20 @@ public class Stage4Driver {
          * If it finishes successfully, return 0. If not, return 1.
          */
         boolean success = job.waitForCompletion(true);
+        if(success){
+            for (String dirName : Arrays.asList("fighters", "physiques", "positions", "results", "fights", "statistics")) {
+                Path from = new Path(args[1],dirName);
+                Path to = new Path(new Path(args[2]), dirName);
+                FileSystem fs = from.getFileSystem(job.getConfiguration());
+                for (FileStatus status : fs.listStatus(from)) {
+                    Path file = status.getPath();
+                    Path dst = new Path(to, file.getName() + "_" + from.getParent().getName());
+                    fs.rename(file, dst);
+                }
+            }
+        }
         System.exit(success ? 0 : 1);
     }
+
 }
 
