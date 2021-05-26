@@ -1,3 +1,5 @@
+import org.apache.hadoop.fs.FileStatus;
+import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -56,6 +58,16 @@ public class Stage4Driver {
          * If it finishes successfully, return 0. If not, return 1.
          */
         boolean success = job.waitForCompletion(true);
+        if(success){
+            Path from = new Path(args[1],"fighters");
+            Path to = new Path("/ufc/final");
+            FileSystem fs = from.getFileSystem(job.getConfiguration()); // get file system
+            for (FileStatus status : fs.listStatus(from)) { // list all files in 'from' folder
+                Path file = status.getPath(); // get path to file in 'from' folder
+                Path dst = new Path(to, file.getName()); // create new file name
+                fs.rename(file, dst); // move file from 'from' folder to 'to' folder
+            }
+        }
         System.exit(success ? 0 : 1);
     }
 }
