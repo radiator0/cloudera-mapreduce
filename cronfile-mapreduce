@@ -1,0 +1,1 @@
+0 21 * * * /home/cloudera/cloudera-start-mapreduce.sh <JAR_PATH> <INPUT_FILE_1> <INPUT_FILE_2> 
