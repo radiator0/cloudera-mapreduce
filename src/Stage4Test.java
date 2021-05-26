@@ -9,6 +9,8 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class Stage4Test {
 
     /*
@@ -58,7 +60,7 @@ public class Stage4Test {
 
         List<Pair<Text, Text>> result = mapDriver.run();
         System.out.println(result);
-        //assertEquals(1, result.size());
+        assertEquals(11, result.size());
         //String expectedK = "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE";
         //String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,WINNER,LOSER,true,false,Bantamweight,False,Orthodox,Orthodox,5.08,-5.08,177.8,170.18,21,22,KO/TKO,11,5,32,15,2,1,2,2,0,0,0,0";
        // assertEquals(expectedK, result.get(0).getFirst().toString());

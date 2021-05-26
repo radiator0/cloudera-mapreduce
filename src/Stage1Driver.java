@@ -13,7 +13,6 @@ import java.nio.file.Paths;
 public class Stage1Driver {
 
     public static void main(String[] args) throws Exception {
-        args = new String[] {"C:\\tmp\\XD\\ee", "C:\\tmp\\XD\\gg", "C:\\jjjj\\hhhh"};
         System.err.println("Start...");
         /*
          * Validate that two arguments were passed from the command line.
