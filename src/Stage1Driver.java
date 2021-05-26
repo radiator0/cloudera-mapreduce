@@ -1,4 +1,7 @@
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.FileUtil;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.RemoteIterator;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -47,8 +50,8 @@ public class Stage1Driver {
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
 
-        File directory1 = new File(Paths.get(args[0]).getParent().toString());
-        File directory2 = new File(Paths.get(args[1]).getParent().toString());
+        /*String directory1 = Paths.get(args[0]).getParent().toString();
+        String directory2 = Paths.get(args[1]).getParent().toString();
 
         final String fileName1 = Paths.get(args[0]).getFileName().toString();
         final String fileName2 = Paths.get(args[1]).getFileName().toString();
@@ -69,8 +72,10 @@ public class Stage1Driver {
             }
         })[0];
 
-
-        FileInputFormat.setInputPaths(job, new Path(inputFile1.getPath()), new Path(inputFile2.getPath()));
+        FileSystem fs = FileSystem.get(job.getConfiguration());
+        fs.listFiles(new Path(directory1), false).;
+        org.apache.hadoop.fs.FileUtil.listFiles(new File(directory1))*/
+        FileInputFormat.setInputPaths(job, new Path(args[0]), new Path(args[1]));
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
 
         /*

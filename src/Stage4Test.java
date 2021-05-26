@@ -63,7 +63,7 @@ public class Stage4Test {
         assertEquals(11, result.size());
         //String expectedK = "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE";
         //String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,WINNER,LOSER,true,false,Bantamweight,False,Orthodox,Orthodox,5.08,-5.08,177.8,170.18,21,22,KO/TKO,11,5,32,15,2,1,2,2,0,0,0,0";
-       // assertEquals(expectedK, result.get(0).getFirst().toString());
+        //assertEquals(expectedK, result.get(0).getFirst().toString());
         //assertEquals(expectedV, result.get(0).getSecond().toString());
     }
 }
