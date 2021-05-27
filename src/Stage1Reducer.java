@@ -10,7 +10,7 @@ public class Stage1Reducer extends Reducer<Text, Text, Text, Text> {
         String[] v = Util.toStringArray(values);
         if(v.length > 2) return;
         Arrays.sort(v);
-        if(v[0].startsWith("2_") || v.length > 1 && !v[1].startsWith("2_")) return;
+        if(v[0].startsWith("2_") || v.length > 1 && v[1].startsWith("1_")) return;
         String first = v[0].substring(2);
         String second = null;
         if(v.length > 1) {

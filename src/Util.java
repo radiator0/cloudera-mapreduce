@@ -32,7 +32,7 @@ public class Util {
         }
     }
 
-    public static String joinIfEveryoneNonEmpty(Object...array) {
+    public static String joinIfEverythingNonEmpty(Object...array) {
         if(nonNullOrEmpty(array)) {
             return joinElements(array);
         } else {

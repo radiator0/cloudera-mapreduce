@@ -43,7 +43,7 @@ public class Stage1Mapper extends Mapper<LongWritable, Text, Text, Text> {
         }
         if(!Util.nonNullOrEmpty(winner, loser, referee)) return;
         String newKey = winner + " vs " + loser + " ref " + referee;
-        String newValue = Util.joinIfEveryoneNonEmpty(
+        String newValue = Util.joinIfEverythingNonEmpty(
                 winner, loser, splitted[3], referee, isDraw ? "Draw" : winner, splitted[7], splitted[6],
                 splitted[winnerStatsStart], splitted[loserStatsStart],
                 splitted[winnerStatsStart + 1], splitted[loserStatsStart + 1],
