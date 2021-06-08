@@ -30,15 +30,7 @@ public class Stage4Reducer extends Reducer<Text, Text, Text, Text> {
             return;
         }
 
-        String newKey = null;
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            md.update(tableAndKey[1].getBytes(StandardCharsets.UTF_8));
-            newKey = new BigInteger(1, md.digest()).toString();
-        } catch (NoSuchAlgorithmException e) {
-            newKey = tableAndKey[1];
-        }
-
+        String newKey = tableAndKey[1];
         for (Text t : values) {
             multipleOutputs.write(tableAndKey[0], new Text(newKey), new Text(t.toString()), tableAndKey[0] + "/" + tableAndKey[0]);
             return;
