@@ -65,10 +65,10 @@ public class Stage4Driver {
                 Path from = new Path(args[1],dirName);
                 Path to = new Path(new Path(args[2]), dirName);
                 FileSystem fs = from.getFileSystem(job.getConfiguration());
+                fs.mkdirs(new Path(new Path(args[2]), dirName));
                 for (FileStatus status : fs.listStatus(from)) {
                     Path file = status.getPath();
-                    Path dst = new Path(to, file.getName() + "_" + from.getParent().getName());
-                    fs.mkdirs(to);
+                    Path dst = new Path(to, file.getName() + "_" + from.getParent().getParent().getName());
                     fs.rename(file, dst);
                 }
             }
