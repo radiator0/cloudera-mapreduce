@@ -20,6 +20,7 @@ echo "Starting of tests..." >> FILE
 #  echo $runtime >> $FILE
 #done
 
+:'
 echo "@@ First group - both files @@" >> FILE
 
 echo "Execution of test with rajeevw_5000.csv and theman_5000.csv" >> $FILE
@@ -54,7 +55,7 @@ do
   runtime=$((end-start))
   echo $runtime >> $FILE
 done
-
+'
 
 echo "@@ Second group - only one file @@" >> FILE
 
