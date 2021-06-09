@@ -73,7 +73,7 @@ public class Stage1Test {
     @Test
     public void testMapperForT() throws IOException {
         final LongWritable key = new LongWritable(0);
-        final Text value = new Text("UFC Fight Night: Hall vs. Silva,FIGHTER 2 ,FIGHTER 1 ,Bantamweight Bout, KO/TKO ,1,2:46,3 Rnd (5-5-5),THE REFEREE,Kick to Head At Distance,FIGHTER1 ,1,17,34,50%,18 of 35,0,0,---,0,0,0:05,15 of 32,2 of 2,0 of 0,16 of 33,1 of 1,0 of 0,FIGHTER 2 ,0,6,13,46%,9 of 16,0,3,0%,0,0,0:54,5 of 11,1 of 2,0 of 0,6 of 12,0 of 1,0 of 0");
+        final Text value = new Text("UFC Fight Night: Hall vs. Silva,FIGHTER 2,FIGHTER 1 ,Bantamweight Bout, KO/TKO ,1,2:46,3 Rnd (5-5-5),THE REFEREE,Kick to Head At Distance,FIGHTER1 ,1,17,34,50%,18 of 35,0,0,---,0,0,0:05,15 of 32,2 of 2,0 of 0,16 of 33,1 of 1,0 of 0,FIGHTER 2 ,0,6,13,46%,9 of 16,0,3,0%,0,0,0:54,5 of 11,1 of 2,0 of 0,6 of 12,0 of 1,0 of 0");
         mapDriver.setInput(key, value);
 
         List<Pair<Text, Text>> result = mapDriver.run();
@@ -122,7 +122,7 @@ public class Stage1Test {
         assertEquals(1, result.size());
         String expectedK = "FIGHTER 1 vs FIGHTER 2 ref THE REFEREE";
         String expectedV = "FIGHTER 1,FIGHTER 2,2021-03-20,THE REFEREE,FIGHTER 1,Bantamweight,False,Decision - Unanimous,Orthodox,Orthodox,170.18,165.1,177.8,170.18,135.0,135.0," +
-                ",,,,,";
+                ",,,,,,";
         assertEquals(expectedK, result.get(0).getFirst().toString());
         assertEquals(expectedV, result.get(0).getSecond().toString());
     }
